@@ -1,8 +1,2 @@
-import { useState, useEffect } from 'react'
-export function useLocalStorage<T>(key: string, initial: T) {
-  const [value, setValue] = useState<T>(() => {
-    try { const i = localStorage.getItem(key); return i ? JSON.parse(i) : initial } catch { return initial }
-  })
-  useEffect(() => { localStorage.setItem(key, JSON.stringify(value)) }, [key, value])
-  return [value, setValue] as const
-}
+import {useState,useEffect} from 'react'
+export function useLocalStorage<T>(k:string,i:T){const [v,s]=useState<T>(()=>{try{const x=localStorage.getItem(k);return x?JSON.parse(x):i}catch{return i}});useEffect(()=>{localStorage.setItem(k,JSON.stringify(v))},[k,v]);return [v,s] as const}
