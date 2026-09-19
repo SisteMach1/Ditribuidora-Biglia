@@ -1,10 +1,11 @@
 {
-  "name": "Distribuidora BIGLIA - Machagai",
-  "short_name": "BIGLIA",
-  "description": "Preventista Pro - Machagai Chaco Offline",
+  "name": "Distribuidora BIGLIA SECURE - Machagai",
+  "short_name": "BIGLIA SECURE",
+  "description": "Sistema Preventa V4 Seguro - Machagai Chaco - Anti Hackeo",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#F6F8FF",
   "theme_color": "#0A2A5E",
+  "orientation": "portrait",
   "icons": [{"src":"./logo.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}]
 }
