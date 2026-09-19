@@ -1,5 +1,0 @@
-import {useState} from 'react'
-import {useLocalStorage} from '../hooks/useLocalStorage'
-type P={id:string;nombre:string;precio:number}
-const INI:P[]=[{id:'1',nombre:'Sifon Soda 500ml x6',precio:3200},{id:'2',nombre:'Bidon Agua 20L',precio:4500}]
-export default function Catalogo(){const [prods,setProds]=useLocalStorage<P[]>('db_productos',INI);const [q,setQ]=useState('');return(<div className='p-4 max-w-6xl mx-auto space-y-4'><div className='flex gap-2'><input value={q} onChange={e=>setQ(e.target.value)} placeholder='Buscar...' className='flex-1 border rounded-2xl px-4 py-3 bg-white'/><button onClick={()=>{const n=prompt('Nombre');if(!n)return;const p=Number(prompt('Precio')||0);setProds([...prods,{id:Date.now().toString(),nombre:n,precio:p}])}} className='bg-biglia-900 text-white px-5 rounded-2xl font-bold'>+ Nuevo</button></div>{prods.filter(p=>p.nombre.toLowerCase().includes(q.toLowerCase())).map(p=><div key={p.id} className='bg-white rounded-2xl p-4 border flex justify-between'><p className='font-bold'>{p.nombre}</p><p className='font-black'>${p.precio}</p></div>)}</div>)}

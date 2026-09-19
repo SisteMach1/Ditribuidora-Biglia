@@ -1,2 +1,0 @@
-import logo from '../assets/logo.png'
-export default function Header(){return(<header className='bg-white border-b sticky top-0 z-20'><div className='flex items-center gap-3 px-4 py-3 max-w-6xl mx-auto'><img src={logo} className='w-10 h-10 rounded-full'/><div><p className='text-[10px] tracking-[0.3em] text-biglia-900/70 font-semibold'>DISTRIBUIDORA</p><p className='text-xl font-black text-biglia-900 -mt-1'>BIGLIA</p></div></div></header>)}

@@ -1,4 +1,0 @@
-import {useState} from 'react'
-import {useLocalStorage} from '../hooks/useLocalStorage'
-type C={id:string;nombre:string}
-export default function Clientes(){const [clis,setClis]=useLocalStorage<C[]>('db_clientes',[{id:'1',nombre:'Kiosco El Sol'}]);const [q,setQ]=useState('');return(<div className='p-4 max-w-6xl mx-auto space-y-4'><input value={q} onChange={e=>setQ(e.target.value)} placeholder='Buscar...' className='w-full border rounded-2xl px-4 py-3 bg-white'/>{clis.filter(c=>c.nombre.toLowerCase().includes(q.toLowerCase())).map(c=><div key={c.id} className='bg-white rounded-2xl p-4 border'><p className='font-bold'>{c.nombre}</p></div>)}<button onClick={()=>{const n=prompt('Nombre');if(!n)return;setClis([...clis,{id:Date.now().toString(),nombre:n}])}} className='w-full border-2 border-dashed rounded-2xl py-4 font-bold'>+ Nuevo Cliente</button></div>)}
